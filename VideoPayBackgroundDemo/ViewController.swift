@@ -24,7 +24,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo(notification:)), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-//        playVideo()
+        loginBtn.transform = CGAffineTransform(translationX: -200, y: 0)
+        signupBtn.transform = CGAffineTransform(translationX: 200, y: 0)
+        playVideo()
     }
 
     
@@ -48,6 +50,11 @@ class ViewController: UIViewController {
         videoLayer.bringSubviewToFront(label)
         videoLayer.bringSubviewToFront(loginBtn)
         videoLayer.bringSubviewToFront(signupBtn)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut, animations: {
+            self.loginBtn.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.signupBtn.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
     }
 
     @objc func replayVideo(notification: NSNotification){

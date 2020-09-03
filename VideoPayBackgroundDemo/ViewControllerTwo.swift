@@ -31,10 +31,10 @@ class ViewControllerTwo: UIViewController {
         transection.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transection.type = CATransitionType.push
         transection.subtype = .fromTop
-        self.view.window?.layer.add(transection, forKey: kCATransition)
-        self.present(vc!, animated: true, completion: nil)
-//        self.navigationController?.view.layer.add(transection, forKey: nil)
-//        navigationController?.pushViewController(vc!, animated: true)
+//        self.view.window?.layer.add(transection, forKey: kCATransition)
+//        self.present(vc!, animated: true, completion: nil)
+        self.navigationController?.view.layer.add(transection, forKey: nil)
+        navigationController?.pushViewController(vc!, animated: true)
         
 //        tableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: height)
 //        self.view.addSubview(tableView)
